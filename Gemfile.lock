@@ -66,6 +66,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    bootsnap (1.16.0)
+      msgpack (~> 1.2)
     builder (3.2.4)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
@@ -96,6 +98,8 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.1)
     minitest (5.18.0)
+    msgpack (1.7.0)
+    msgpack (1.7.0-java)
     net-imap (0.3.4)
       date
       net-protocol
@@ -125,6 +129,8 @@ GEM
     racc (1.6.2)
     racc (1.6.2-java)
     rack (2.2.6.4)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.4.3)
@@ -182,8 +188,10 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bootsnap
   debug
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.4, >= 7.0.4.3)
   sqlite3 (~> 1.4)
   tzinfo-data
