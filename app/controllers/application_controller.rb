@@ -77,4 +77,6 @@ class ApplicationController < ActionController::API
     # rescue all errors
     def standard_error(exception)
       app_response(message: 'failed', data: { info: exception.message }, status: 401  )
+    end
+  end
   

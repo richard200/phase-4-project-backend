@@ -37,3 +37,550 @@ Migrating to CreateReviews (20230329081752)
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-03-31 14:52:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/aketch/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/aketch/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.2ms | Allocations: 763)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3878)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 14:53:07 +0300
+  
+SyntaxError (/home/aketch/code/phase-4-project-backend/app/controllers/application_controller.rb:80: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:80: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:80: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/categories_controller.rb:1:in `<main>'
+Started GET "/favicon.ico" for ::1 at 2023-03-31 14:53:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/categories" for ::1 at 2023-03-31 14:53:42 +0300
+  
+SyntaxError (/home/aketch/code/phase-4-project-backend/app/controllers/application_controller.rb:81: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:81: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:81: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/categories_controller.rb:1:in `<main>'
+Started GET "/categories" for ::1 at 2023-03-31 14:53:55 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 26ms (Views: 4.4ms | ActiveRecord: 1.1ms | Allocations: 3584)
+
+
+Started POST "/recipes/2" for ::1 at 2023-03-31 14:56:47 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/recipes/2"):
+  
+Started POST "/recipe/2" for ::1 at 2023-03-31 14:57:14 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/recipe/2"):
+  
+Started GET "/recipes" for ::1 at 2023-03-31 14:57:46 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 5654)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 14:57:56 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 638)
+
+
+Started GET "/recipes/3" for ::1 at 2023-03-31 14:58:01 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9:in `show'
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1654)
+
+
+Started GET "/recipes/1" for ::1 at 2023-03-31 14:58:12 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9:in `show'
+Completed 404 Not Found in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 507)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "et"], ["description", "Eos laborum explicabo in."], ["created_at", "2023-03-31 12:05:13.504590"], ["updated_at", "2023-03-31 12:05:13.504590"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "minus"], ["description", "Sed sit doloribus est."], ["created_at", "2023-03-31 12:05:13.511894"], ["updated_at", "2023-03-31 12:05:13.511894"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "quia"], ["description", "Culpa sed delectus et."], ["created_at", "2023-03-31 12:05:13.517178"], ["updated_at", "2023-03-31 12:05:13.517178"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "dolorem"], ["description", "Incidunt perferendis iste illo."], ["created_at", "2023-03-31 12:05:13.522139"], ["updated_at", "2023-03-31 12:05:13.522139"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "possimus"], ["description", "Modi ipsa debitis temporibus."], ["created_at", "2023-03-31 12:05:13.527099"], ["updated_at", "2023-03-31 12:05:13.527099"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "est"], ["description", "Aperiam et quod magni."], ["created_at", "2023-03-31 12:06:10.238687"], ["updated_at", "2023-03-31 12:06:10.238687"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "exercitationem"], ["description", "Aliquid labore magni modi."], ["created_at", "2023-03-31 12:06:10.249321"], ["updated_at", "2023-03-31 12:06:10.249321"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "voluptatem"], ["description", "Dolorem autem rerum quibusdam."], ["created_at", "2023-03-31 12:06:10.258452"], ["updated_at", "2023-03-31 12:06:10.258452"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "est"], ["description", "Id a ea non."], ["created_at", "2023-03-31 12:06:10.265433"], ["updated_at", "2023-03-31 12:06:10.265433"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "aliquam"], ["description", "Voluptatem qui sed in."], ["created_at", "2023-03-31 12:06:10.273186"], ["updated_at", "2023-03-31 12:06:10.273186"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "jackson"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mariela@hettinger.co"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "consectetur"], ["description", "Qui quo fugit rerum."], ["created_at", "2023-03-31 12:07:14.839631"], ["updated_at", "2023-03-31 12:07:14.839631"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "iste"], ["description", "Iste perspiciatis laborum unde."], ["created_at", "2023-03-31 12:07:14.848517"], ["updated_at", "2023-03-31 12:07:14.848517"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "quos"], ["description", "Sit accusantium voluptates voluptas."], ["created_at", "2023-03-31 12:07:14.854114"], ["updated_at", "2023-03-31 12:07:14.854114"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "accusantium"], ["description", "Minima non labore numquam."], ["created_at", "2023-03-31 12:07:14.860511"], ["updated_at", "2023-03-31 12:07:14.860511"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "quia"], ["description", "Similique repellat nostrum possimus."], ["created_at", "2023-03-31 12:07:14.870139"], ["updated_at", "2023-03-31 12:07:14.870139"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "emerson_schuster"], ["email", "caleb_grady@volkman.org"], ["password_digest", "[FILTERED]"], ["review_id", nil], ["created_at", "2023-03-31 12:07:14.924956"], ["updated_at", "2023-03-31 12:07:14.924956"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveReviewIdFromUsers (20230331120935)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "review_id" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","email","password_digest","review_id","created_at","updated_at")
+                     SELECT "id","username","email","password_digest","review_id","created_at","updated_at" FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","email","password_digest","created_at","updated_at")
+                     SELECT "id","username","email","password_digest","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230331120935"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "impedit"], ["description", "Illo dicta dolorem aliquid."], ["created_at", "2023-03-31 12:09:50.566171"], ["updated_at", "2023-03-31 12:09:50.566171"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "iusto"], ["description", "Expedita magnam magni ad."], ["created_at", "2023-03-31 12:09:50.577051"], ["updated_at", "2023-03-31 12:09:50.577051"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "aliquid"], ["description", "Quae ut dolore nesciunt."], ["created_at", "2023-03-31 12:09:50.585598"], ["updated_at", "2023-03-31 12:09:50.585598"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "et"], ["description", "Et laborum qui dolorum."], ["created_at", "2023-03-31 12:09:50.592395"], ["updated_at", "2023-03-31 12:09:50.592395"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "qui"], ["description", "Minus ducimus id quia."], ["created_at", "2023-03-31 12:09:50.598021"], ["updated_at", "2023-03-31 12:09:50.598021"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "wynona.bode"], ["email", "jimmy@hermiston.net"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.613492"], ["updated_at", "2023-03-31 12:09:50.613492"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "ione"], ["email", "audrea@bernier.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.618903"], ["updated_at", "2023-03-31 12:09:50.618903"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "bobby"], ["email", "cristopher@grady.net"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.625051"], ["updated_at", "2023-03-31 12:09:50.625051"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "mandie_smith"], ["email", "romona.champlin@cronin.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.631361"], ["updated_at", "2023-03-31 12:09:50.631361"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "maribeth.parker"], ["email", "ollie@boehm-reichel.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.636923"], ["updated_at", "2023-03-31 12:09:50.636923"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "kati.schulist"], ["email", "titus@jacobi-reichel.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.641907"], ["updated_at", "2023-03-31 12:09:50.641907"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "susy"], ["email", "illa_johnson@leannon.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.647170"], ["updated_at", "2023-03-31 12:09:50.647170"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "douglass"], ["email", "lissa_graham@harris-beer.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.652437"], ["updated_at", "2023-03-31 12:09:50.652437"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "milan.cormier"], ["email", "winifred_reynolds@graham.info"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.657611"], ["updated_at", "2023-03-31 12:09:50.657611"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "donte.glover"], ["email", "johnson.weimann@zieme-weissnat.co"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:09:50.663203"], ["updated_at", "2023-03-31 12:09:50.663203"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDescriptionToRecipes (20230331121300)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "description" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230331121300"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "molestiae"], ["description", "Dolorem eaque iusto autem."], ["created_at", "2023-03-31 12:13:06.784668"], ["updated_at", "2023-03-31 12:13:06.784668"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "adipisci"], ["description", "Quaerat corrupti sed consequatur."], ["created_at", "2023-03-31 12:13:06.792682"], ["updated_at", "2023-03-31 12:13:06.792682"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "eligendi"], ["description", "Perferendis maxime est quia."], ["created_at", "2023-03-31 12:13:06.799138"], ["updated_at", "2023-03-31 12:13:06.799138"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "sint"], ["description", "Quibusdam corporis et similique."], ["created_at", "2023-03-31 12:13:06.804653"], ["updated_at", "2023-03-31 12:13:06.804653"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "sequi"], ["description", "Nesciunt repudiandae iusto sed."], ["created_at", "2023-03-31 12:13:06.810515"], ["updated_at", "2023-03-31 12:13:06.810515"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "darcel"], ["email", "candance@hermiston-bashirian.info"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.831219"], ["updated_at", "2023-03-31 12:13:06.831219"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "lashandra.moore"], ["email", "angeline_brakus@leffler.info"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.837354"], ["updated_at", "2023-03-31 12:13:06.837354"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "essie"], ["email", "brent@leannon-aufderhar.co"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.844811"], ["updated_at", "2023-03-31 12:13:06.844811"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "denny"], ["email", "wava.rodriguez@strosin-huels.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.854857"], ["updated_at", "2023-03-31 12:13:06.854857"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "georgianne"], ["email", "marisela.berge@schaden.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.863823"], ["updated_at", "2023-03-31 12:13:06.863823"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "emory"], ["email", "mee@harris-wilderman.info"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.874038"], ["updated_at", "2023-03-31 12:13:06.874038"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "ivelisse"], ["email", "kerry@dach.net"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.883297"], ["updated_at", "2023-03-31 12:13:06.883297"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "angie_fahey"], ["email", "evan@gulgowski.name"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.895852"], ["updated_at", "2023-03-31 12:13:06.895852"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "hunter"], ["email", "bobbie_nicolas@bauch.io"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.904688"], ["updated_at", "2023-03-31 12:13:06.904688"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "augustine"], ["email", "maurita@fadel.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:06.912014"], ["updated_at", "2023-03-31 12:13:06.912014"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "aut"], ["description", "Architecto molestiae nihil reprehenderit."], ["created_at", "2023-03-31 12:13:45.893284"], ["updated_at", "2023-03-31 12:13:45.893284"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "quam"], ["description", "Maiores iste eum est."], ["created_at", "2023-03-31 12:13:45.901421"], ["updated_at", "2023-03-31 12:13:45.901421"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "eius"], ["description", "Iste voluptatem rerum quas."], ["created_at", "2023-03-31 12:13:45.906335"], ["updated_at", "2023-03-31 12:13:45.906335"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "et"], ["description", "Inventore illum distinctio ut."], ["created_at", "2023-03-31 12:13:45.911145"], ["updated_at", "2023-03-31 12:13:45.911145"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "quia"], ["description", "Suscipit nulla unde id."], ["created_at", "2023-03-31 12:13:45.916317"], ["updated_at", "2023-03-31 12:13:45.916317"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "tommy"], ["email", "nelson_murray@deckow-jacobson.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.930947"], ["updated_at", "2023-03-31 12:13:45.930947"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "holley"], ["email", "elfriede.stiedemann@adams.info"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.936453"], ["updated_at", "2023-03-31 12:13:45.936453"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "shu"], ["email", "malik.hansen@herman-robel.net"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.942232"], ["updated_at", "2023-03-31 12:13:45.942232"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "carlita"], ["email", "jodee@friesen.co"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.949470"], ["updated_at", "2023-03-31 12:13:45.949470"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "eloy"], ["email", "markus_huels@schmeler.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.957452"], ["updated_at", "2023-03-31 12:13:45.957452"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rodrigo"], ["email", "francis@hauck.name"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.963706"], ["updated_at", "2023-03-31 12:13:45.963706"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "francis.welch"], ["email", "ozzie@schamberger.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.969331"], ["updated_at", "2023-03-31 12:13:45.969331"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "frederic"], ["email", "clint_donnelly@wolf.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.975645"], ["updated_at", "2023-03-31 12:13:45.975645"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "bennie"], ["email", "dylan_leannon@marquardt.info"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.981685"], ["updated_at", "2023-03-31 12:13:45.981685"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "lowell"], ["email", "latricia.abbott@welch.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 12:13:45.987521"], ["updated_at", "2023-03-31 12:13:45.987521"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ipsa et ullam recusandae."], ["instructions", "Aliquid hic doloremque. Non ipsum in. Voluptas aspernatur nesciunt.\n\nId et facilis. Commodi illum magnam. Consequatur quo in.\n\nQui totam et. Excepturi modi nostrum. Provident eveniet corrupti."], ["ingredients", "laboriosam, nulla, ipsam, distinctio, nihil, perferendis, dolorem, eum, quia, dolor"], ["prep_time", 69], ["user_id", 15], ["category_id", 8], ["created_at", "2023-03-31 12:13:46.014493"], ["updated_at", "2023-03-31 12:13:46.014493"], ["description", nil]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Et quia cupiditate vitae."], ["instructions", "Rerum nemo ipsum. Sit aliquam totam. Nostrum eos ut.\n\nDucimus dolore mollitia. Autem rerum dolorem. Ex in consequatur.\n\nEsse nihil voluptates. Occaecati cupiditate et. Fugit non itaque."], ["ingredients", "accusamus, consequuntur, ea, voluptates, eum, alias, sit, commodi, quo, saepe"], ["prep_time", 85], ["user_id", 22], ["category_id", 18], ["created_at", "2023-03-31 12:13:46.026725"], ["updated_at", "2023-03-31 12:13:46.026725"], ["description", nil]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Mollitia ab sint ratione."], ["instructions", "Voluptates mollitia esse. Neque autem est. Voluptate deleniti rerum.\n\nUt consectetur maiores. Doloremque quae molestiae. Beatae ipsam quibusdam.\n\nAlias nulla quaerat. Sunt provident consequatur. Tenetur natus eum."], ["ingredients", "consequatur, accusantium, rerum, aliquid, vel, earum, voluptas, nemo, nulla, omnis"], ["prep_time", 86], ["user_id", 30], ["category_id", 18], ["created_at", "2023-03-31 12:13:46.035648"], ["updated_at", "2023-03-31 12:13:46.035648"], ["description", nil]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ad porro qui maiores."], ["instructions", "Autem sed voluptatem. Eos facilis autem. Accusantium animi asperiores.\n\nVitae quia velit. Dignissimos ut eum. Voluptas est vel.\n\nEst animi illum. Modi molestias ut. Sed veritatis voluptates."], ["ingredients", "velit, sit, praesentium, quos, ut, voluptatem, perspiciatis, similique, eveniet, eligendi"], ["prep_time", 16], ["user_id", 9], ["category_id", 25], ["created_at", "2023-03-31 12:13:46.043793"], ["updated_at", "2023-03-31 12:13:46.043793"], ["description", nil]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Quia aut nesciunt minima."], ["instructions", "Provident quam labore. Voluptatem repellendus assumenda. Eum qui quod.\n\nAut et pariatur. Magni quae voluptatem. Aut perferendis aut.\n\nAccusamus illum unde. Eos nobis ullam. Quia odit sequi."], ["ingredients", "et, minima, sed, ullam, repellat, est, quis, dolore, quam, ut"], ["prep_time", 95], ["user_id", 13], ["category_id", 18], ["created_at", "2023-03-31 12:13:46.052242"], ["updated_at", "2023-03-31 12:13:46.052242"], ["description", nil]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Aut rerum earum dolores."], ["instructions", "Doloremque quam repellat. Velit voluptatum et. Sit laboriosam provident.\n\nUllam qui illo. Non in quo. Voluptate ut debitis.\n\nSint veniam dolorem. Est magnam aliquam. Fugit voluptatem reprehenderit."], ["ingredients", "placeat, tempora, ducimus, explicabo, ut, deserunt, recusandae, omnis, provident, quas"], ["prep_time", 65], ["user_id", 8], ["category_id", 19], ["created_at", "2023-03-31 12:13:46.060661"], ["updated_at", "2023-03-31 12:13:46.060661"], ["description", nil]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dolor et magnam esse."], ["instructions", "Iure qui ea. Non dolores iusto. Facilis id numquam.\n\nUt accusantium rem. Consequatur molestiae tenetur. Aut aspernatur quaerat.\n\nEa inventore consequuntur. Qui reiciendis repudiandae. Eum eos ad."], ["ingredients", "aliquid, qui, quia, suscipit, quia, qui, odit, quae, officiis, eos"], ["prep_time", 25], ["user_id", 15], ["category_id", 13], ["created_at", "2023-03-31 12:13:46.068964"], ["updated_at", "2023-03-31 12:13:46.068964"], ["description", nil]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vel explicabo tenetur nulla."], ["instructions", "Non ducimus asperiores. Soluta sint in. Accusamus aliquid hic.\n\nRepudiandae perferendis est. Exercitationem enim facere. Maiores ducimus error.\n\nEst quaerat qui. Id sit tempore. Quidem consequuntur sed."], ["ingredients", "sunt, illo, sint, impedit, dolores, eum, quasi, architecto, perspiciatis, nulla"], ["prep_time", 61], ["user_id", 12], ["category_id", 13], ["created_at", "2023-03-31 12:13:46.077242"], ["updated_at", "2023-03-31 12:13:46.077242"], ["description", nil]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Dignissimos labore qui dolorum."], ["instructions", "Dolores expedita sit. Similique vel et. Sed magni sunt.\n\nSed tempore dignissimos. Qui qui excepturi. Voluptas tempore occaecati.\n\nVel quisquam repellat. Non saepe corrupti. Doloremque quia accusantium."], ["ingredients", "esse, earum, quis, eligendi, magnam, rerum, hic, perspiciatis, qui, nihil"], ["prep_time", 43], ["user_id", 28], ["category_id", 17], ["created_at", "2023-03-31 12:13:46.094653"], ["updated_at", "2023-03-31 12:13:46.094653"], ["description", nil]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Harum laboriosam nemo sit."], ["instructions", "Qui et saepe. Aliquam voluptatem animi. Quibusdam aperiam autem.\n\nExplicabo sed ut. Aut magni inventore. Et architecto omnis.\n\nMaiores harum voluptate. Atque est facilis. Inventore earum corporis."], ["ingredients", "voluptatem, et, non, laborum, totam, sint, ab, amet, deleniti, voluptatem"], ["prep_time", 24], ["user_id", 7], ["category_id", 18], ["created_at", "2023-03-31 12:13:46.115140"], ["updated_at", "2023-03-31 12:13:46.115140"], ["description", nil]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 12], ["recipe_id", 9], ["rating", 2], ["created_at", "2023-03-31 12:13:46.139891"], ["updated_at", "2023-03-31 12:13:46.139891"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 8], ["recipe_id", 7], ["rating", 4], ["created_at", "2023-03-31 12:13:46.168717"], ["updated_at", "2023-03-31 12:13:46.168717"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 25], ["recipe_id", 8], ["rating", 4], ["created_at", "2023-03-31 12:13:46.176542"], ["updated_at", "2023-03-31 12:13:46.176542"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 14], ["recipe_id", 2], ["rating", 5], ["created_at", "2023-03-31 12:13:46.193632"], ["updated_at", "2023-03-31 12:13:46.193632"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 20], ["recipe_id", 10], ["rating", 2], ["created_at", "2023-03-31 12:13:46.211417"], ["updated_at", "2023-03-31 12:13:46.211417"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 23], ["recipe_id", 4], ["rating", 1], ["created_at", "2023-03-31 12:13:46.221721"], ["updated_at", "2023-03-31 12:13:46.221721"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 23], ["recipe_id", 4], ["rating", 4], ["created_at", "2023-03-31 12:13:46.229715"], ["updated_at", "2023-03-31 12:13:46.229715"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 12], ["recipe_id", 4], ["rating", 5], ["created_at", "2023-03-31 12:13:46.237841"], ["updated_at", "2023-03-31 12:13:46.237841"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 17], ["recipe_id", 5], ["rating", 3], ["created_at", "2023-03-31 12:13:46.244961"], ["updated_at", "2023-03-31 12:13:46.244961"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["recipe_id", 5], ["rating", 2], ["created_at", "2023-03-31 12:13:46.251566"], ["updated_at", "2023-03-31 12:13:46.251566"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/recipes/1" for ::1 at 2023-03-31 15:13:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:9:in `show'
+Completed 200 OK in 26ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 21518)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 15:14:06 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 2199)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 15:14:32 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 0.9ms | Allocations: 19223)
+
+
+Started POST "/recipe/2" for ::1 at 2023-03-31 15:15:03 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/recipe/2"):
+  
+Started GET "/categories/2" for ::1 at 2023-03-31 15:15:23 +0300
+Processing by CategoriesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:11:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 736)
+
+
+Started POST "/categories/56" for ::1 at 2023-03-31 15:16:52 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/categories/56"):
+  
+Started POST "/categories/56" for ::1 at 2023-03-31 15:18:29 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/categories/56"):
+  
+Started POST "/categories" for ::1 at 2023-03-31 15:18:57 +0300
+Processing by CategoriesController#create as */*
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2658)
+
+
+Started POST "/categories" for ::1 at 2023-03-31 15:19:13 +0300
+Processing by CategoriesController#create as */*
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1180)
+
+
+Started POST "/categories" for ::1 at 2023-03-31 15:19:48 +0300
+Processing by CategoriesController#create as */*
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", nil], ["description", nil], ["created_at", "2023-03-31 12:19:48.952391"], ["updated_at", "2023-03-31 12:19:48.952391"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+Completed 401 Unauthorized in 11ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 5064)
+
+
+Started POST "/categories" for ::1 at 2023-03-31 15:21:14 +0300
+Processing by CategoriesController#create as */*
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", nil], ["description", nil], ["created_at", "2023-03-31 12:21:14.186876"], ["updated_at", "2023-03-31 12:21:14.186876"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1899)
+
+
+Started POST "/categories" for ::1 at 2023-03-31 15:23:54 +0300
+Processing by CategoriesController#create as */*
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", nil], ["description", nil], ["created_at", "2023-03-31 12:23:54.567592"], ["updated_at", "2023-03-31 12:23:54.567592"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1899)
+
+
+Started POST "/categories" for ::1 at 2023-03-31 15:29:34 +0300
+Processing by CategoriesController#create as */*
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:13:in `create'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", nil], ["description", nil], ["created_at", "2023-03-31 12:29:34.453141"], ["updated_at", "2023-03-31 12:29:34.453141"]]
+  ↳ app/controllers/categories_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:13:in `create'
+Completed 401 Unauthorized in 8ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 4593)
+
+
+Started POST "/categories" for ::1 at 2023-03-31 15:30:17 +0300
+Processing by CategoriesController#create as */*
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:13:in `create'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", nil], ["description", nil], ["created_at", "2023-03-31 12:30:17.887001"], ["updated_at", "2023-03-31 12:30:17.887001"]]
+  ↳ app/controllers/categories_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/categories_controller.rb:13:in `create'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1897)
+
+
+Started POST "/categories" for ::1 at 2023-03-31 15:32:29 +0300
+Processing by CategoriesController#create as */*
+Completed 500 Internal Server Error in 4ms (Allocations: 2535)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:5:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/application_controller.rb:64:in `user'
+app/controllers/categories_controller.rb:13:in `create'
+Started POST "/categories" for ::1 at 2023-03-31 15:37:56 +0300
+Processing by CategoriesController#create as */*
+Completed 500 Internal Server Error in 9ms (Allocations: 2894)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:5:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/application_controller.rb:64:in `user'
+app/controllers/categories_controller.rb:13:in `create'
+Started POST "/categories" for ::1 at 2023-03-31 15:38:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#create as */*
+Completed 401 Unauthorized in 22ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 24186)
+
+
