@@ -3,12 +3,13 @@ class ReviewsController < ApplicationController
         #before_action :authenticate_user!, only: [:create]
         def index
           reviews = Review.all
-          app_response(message: 'Success', status: :ok, data: reviews)
+          app_response(message: 'success', status: :ok, data: ActiveModelSerializers::SerializableResource.new(reviews, each_serializer: ReviewSerializer).as_json)
+
         end
         def show
             review = Review.find_by(id: params[:id])
             if review
-              app_response(message: 'Review found successfully', status: :ok, data: review)
+              render json: review, serializer: ReviewSerializer, status: :ok
             else
               app_response(message: 'Failed to find review', status: :not_found)
             end

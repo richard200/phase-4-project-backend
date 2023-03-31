@@ -584,3 +584,344 @@ Processing by CategoriesController#create as */*
 Completed 401 Unauthorized in 22ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 24186)
 
 
+Started GET "/categories" for ::1 at 2023-03-31 17:04:20 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 1.0ms | Allocations: 20483)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:04:51 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/application_controller.rb:7:in `app_response'
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.8ms | Allocations: 3923)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:05:15 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.48ms)
+Completed 200 OK in 35ms (Views: 17.3ms | ActiveRecord: 0.7ms | Allocations: 41853)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:07:24 +0300
+Processing by CategoriesController#index as HTML
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.8ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 1.1ms | Allocations: 7223)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:17:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (15.33ms)
+Completed 500 Internal Server Error in 32ms (Views: 15.5ms | ActiveRecord: 0.8ms | Allocations: 42329)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:79:in `standard_error'
+Started GET "/categories" for ::1 at 2023-03-31 17:17:39 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:7:in `index'
+No serializer found for resource: {"id"=>1, "name"=>"et", "description"=>"Eos laborum explicabo in."}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.66ms)
+Completed 200 OK in 22ms (Views: 4.5ms | ActiveRecord: 1.7ms | Allocations: 6134)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:18:19 +0300
+Processing by CategoriesController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:7:in `index'
+Completed 500 Internal Server Error in 11ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 4820)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `app_response'
+app/controllers/application_controller.rb:79:in `standard_error'
+Started GET "/categories" for ::1 at 2023-03-31 17:29:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:7:in `index'
+No serializer found for resource: {"id"=>1, "name"=>"et", "description"=>"Eos laborum explicabo in."}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.74ms)
+Completed 200 OK in 32ms (Views: 2.2ms | ActiveRecord: 0.7ms | Allocations: 40273)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:32:20 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:7:in `index'
+[active_model_serializers] Rendered CategorySerializer with ActiveModelSerializers::Adapter::Attributes (3.18ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 18ms (Views: 1.3ms | ActiveRecord: 1.2ms | Allocations: 7264)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:34:53 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:7:in `index'
+[active_model_serializers] Rendered CategorySerializer with ActiveModelSerializers::Adapter::Attributes (5.61ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 9ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 2079)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:35:05 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:7:in `index'
+[active_model_serializers] Rendered CategorySerializer with ActiveModelSerializers::Adapter::Attributes (2.2ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 401 Unauthorized in 36ms (Views: 1.6ms | ActiveRecord: 0.7ms | Allocations: 41368)
+
+
+Started GET "/categories" for ::1 at 2023-03-31 17:35:18 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:7:in `index'
+No serializer found for resource: {"id"=>1, "name"=>"et", "description"=>"Eos laborum explicabo in."}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.54ms)
+Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 1.0ms | Allocations: 5529)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:35:47 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.65ms)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.8ms | Allocations: 22712)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:37:31 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.84ms)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 1.5ms | Allocations: 8828)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:37:37 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.88ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 2277)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:38:28 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 28ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 8621)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:38:44 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers]   [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.7ms)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 0.9ms | Allocations: 8844)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:39:50 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 6ms (Views: 0.6ms | Allocations: 4098)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:40:07 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers]   [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.56ms)
+Completed 200 OK in 17ms (Views: 9.4ms | ActiveRecord: 1.1ms | Allocations: 8814)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:40:33 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/application_controller.rb:79:in `message'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 19ms (Views: 0.8ms | ActiveRecord: 0.9ms | Allocations: 10212)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:41:38 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 14ms (Views: 0.6ms | Allocations: 5935)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:42:14 +0300
+  
+SyntaxError (/home/aketch/code/phase-4-project-backend/app/controllers/recipes_controller.rb:9: syntax error, unexpected `end', expecting ')'
+        end
+        ^~~
+/home/aketch/code/phase-4-project-backend/app/controllers/recipes_controller.rb:53: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/recipes_controller.rb:9: syntax error, unexpected `end', expecting ')'
+app/controllers/recipes_controller.rb:53: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/recipes_controller.rb:9: syntax error, unexpected `end', expecting ')'
+app/controllers/recipes_controller.rb:53: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/recipes" for ::1 at 2023-03-31 17:42:30 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers]   [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.62ms)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 1.3ms | Allocations: 8850)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:46:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 34ms (Views: 1.7ms | ActiveRecord: 0.7ms | Allocations: 44847)
+
+
+Started GET "/recipes/1" for ::1 at 2023-03-31 17:46:52 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.57ms)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1433)
+
+
+Started GET "/recipes/1" for ::1 at 2023-03-31 17:47:51 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 18ms (Views: 0.9ms | ActiveRecord: 1.4ms | Allocations: 7342)
+
+
+Started GET "/recipes/1" for ::1 at 2023-03-31 17:50:03 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 7337)
+
+
+Started GET "/recipes/1" for ::1 at 2023-03-31 17:57:54 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 36ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 44560)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 17:58:02 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers]   [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.92ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.74ms)
+Completed 200 OK in 10ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 3693)
+
+
+Started GET "/recipes/1" for ::1 at 2023-03-31 17:58:06 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 696)
+
+
+Started GET "/recipes/1" for ::1 at 2023-03-31 17:58:13 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 696)
+
+
+Started GET "/recipes" for ::1 at 2023-03-31 18:00:55 +0300
+Processing by RecipesController#index as HTML
+[active_model_serializers]   [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.82ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.38ms)
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 1.3ms | Allocations: 8699)
+
+
+Started GET "/recipes/3" for ::1 at 2023-03-31 18:01:01 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:13:in `show'
+[active_model_serializers] Rendered RecipeSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 809)
+
+
+Started GET "/reviews" for ::1 at 2023-03-31 18:01:47 +0300
+Processing by ReviewsController#index as HTML
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.66ms)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 18748)
+
+
+Started GET "/reviews" for ::1 at 2023-03-31 18:04:39 +0300
+Processing by ReviewsController#index as HTML
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.63ms)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 1.1ms | Allocations: 6681)
+
+
+Started GET "/reviews/2" for ::1 at 2023-03-31 18:04:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `show'
+[active_model_serializers] Rendered ReviewSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 35ms (Views: 3.6ms | ActiveRecord: 0.8ms | Allocations: 42478)
+
+
+Started GET "/reviews" for ::1 at 2023-03-31 18:05:11 +0300
+Processing by ReviewsController#index as HTML
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `app_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.38ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 2215)
+
+
+Started GET "/reviews" for ::1 at 2023-03-31 18:06:16 +0300
+Processing by ReviewsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 9ms (Views: 0.6ms | Allocations: 5207)
+
+
+Started GET "/reviews" for ::1 at 2023-03-31 18:06:44 +0300
+Processing by ReviewsController#index as HTML
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+[active_model_serializers]   ↳ app/controllers/reviews_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 6698)
+
+

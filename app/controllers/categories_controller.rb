@@ -1,43 +1,48 @@
- class CategoriesController < ApplicationController
-        def index
-            cat = Category.all
-            app_response(message: 'success', status: :ok, data: cat)
-        end
+class CategoriesController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
-        # def create
-        #     cat = Category.create!(category_params)
-        #     app_response(message: 'Category created successfully', status: :created, data: :cat)
-        # end
+  def index
+    cat = Category.all
 
-        def create
-            cat = user.category.create!(category_params)
-            if cat.valid?
-                app_response(status: :created, data: cat)
-            else
-                app_response(status: :unprocessable_entity, data: cat.errors, message: 'failed')
-            end
-        end
+    if cat.present?
+      render json: cat.as_json(only: [:id, :name, :description]), status: :ok
+    else
+      app_response(message: 'No categories found', status: :not_found)
+    end
+  end
 
-        def show
-            cat = Category.find_by(id: params[:id])
-            if cat
-              app_response(message: 'Category found successfully', status: :ok, data: cat)
-            else
-              app_response(message: 'Category not found', status: :not_found)
-            end
-          end
-          #def destroy
-            #category = Category.find_by(id: params[:id])
-           # if category
-              #category.destroy
-              #app_response(message: 'Category deleted successfully', status: :ok)
-            #else
-             # app_response(message: 'Failed to delete category', status: :unprocessable_entity)
-            #end
-          #end
-        private
-        def category_params
-            params.permit(:name, :description)
-        end
- end
+  def create
+    cat = user.category.build(category_params)
 
+    if cat.save
+      app_response(status: :created, message: 'Category created successfully', data: cat)
+    else
+      app_response(status: :unprocessable_entity, message: 'Category creation failed', data: cat.errors)
+    end
+  end
+
+  def show
+    cat = Category.find_by(id: params[:id])
+
+    if cat
+      app_response(message: 'Category found successfully', status: :ok, data: cat)
+    else
+      app_response(message: 'Category not found', status: :not_found)
+    end
+  end
+
+  private
+
+  def category_params
+    params.permit(:id, :name, :description)
+  end
+
+  def record_not_found(exception)
+    app_response(message: exception.message, status: :not_found)
+  end
+
+  def app_response(message:, status:, data: {})
+    response = { message: message, data: data }
+    render json: response, status: status
+  end
+end

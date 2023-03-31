@@ -1,18 +1,24 @@
 class RecipesController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
     
      #before_action :authenticate_user!, only: [:create, :destroy]
         def index
             recipes = Recipe.all
-            app_response(message: 'success', status: :ok, data: recipes)
+            app_response(message: 'success', status: :ok, data: ActiveModelSerializers::SerializableResource.new(recipes, each_serializer: RecipeSerializer).as_json)
+
         end
+
         def show
             recipe = Recipe.find_by(id: params[:id])
             if recipe
-                app_response(message: 'Recipe found successfully', status: :ok, data: recipe)
+              render json: recipe, serializer: RecipeSerializer, status: :ok
             else
-                app_response(message: 'Failed to find recipe', status: :not_found)
+              app_response(message: 'Failed to find recipe', status: :not_found)
             end
         end
+          
+
         def create
             recipe = Recipe.create!(recipe_params)
             if recipe
@@ -42,5 +48,10 @@ class RecipesController < ApplicationController
         def recipe_params
             params.permit(:title, :instructions, :ingredients, :prep_time)
         end
+
+        def record_not_found(exception)
+            app_response(message: exception.message, status: :not_found)
+      end
+        
     
 end
