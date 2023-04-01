@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_31_121300) do
+ActiveRecord::Schema.define(version: 2023_03_31_121300) do
+
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -25,8 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_31_121300) do
     t.integer "prep_time", null: false
     t.integer "user_id", null: false
     t.integer "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "description"
   end
 
@@ -34,16 +35,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_31_121300) do
     t.integer "user_id", null: false
     t.integer "recipe_id", null: false
     t.integer "rating", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
     t.string "password_digest", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
