@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-
+    # before_action :authenticate_request, only: [:create, :update, :destroy]
     
-     #before_action :authenticate_user!, only: [:create, :destroy]
+     before_action :require_login, only: [:create, :destroy]
         def index
             recipes = Recipe.all
             app_response(message: 'success', status: :ok, data: ActiveModelSerializers::SerializableResource.new(recipes, each_serializer: RecipeSerializer).as_json)
@@ -27,6 +27,7 @@ class RecipesController < ApplicationController
                 app_response(message: 'Something went wrong when trying to create your recipe', status: :unprocessable_entity, data: recipe.errors)
             end
         end
+
         def update
             recipe = Recipe.find_by(id: params[:id])
             if recipe.update(recipe_params)
@@ -35,6 +36,7 @@ class RecipesController < ApplicationController
                 app_response(message: 'Failed to update recipe', status: :unprocessable_entity, data: recipe.errors)
             end
         end
+
         def destroy
             recipe = Recipe.find_by(id: params[:id])
             if recipe
@@ -44,7 +46,10 @@ class RecipesController < ApplicationController
                 app_response(message: 'Failed to delete recipe', status: :unprocessable_entity)
             end
         end
+
+
         private
+
         def recipe_params
             params.permit(:title, :instructions, :ingredients, :prep_time)
         end

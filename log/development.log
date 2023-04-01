@@ -925,3 +925,948 @@ Processing by ReviewsController#index as HTML
 Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 6698)
 
 
+Started GET "/categories" for ::1 at 2023-03-31 21:46:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:7:in `index'
+No serializer found for resource: {"id"=>1, "name"=>"et", "description"=>"Eos laborum explicabo in."}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.5ms)
+Completed 200 OK in 31ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 40273)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-03-31 21:46:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/register" for ::1 at 2023-03-31 21:53:12 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/register"):
+  
+Started POST "/users/register" for ::1 at 2023-03-31 21:53:35 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/register"):
+  
+Started POST "/users/register" for ::1 at 2023-03-31 21:53:53 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/register"):
+  
+Started POST "/register" for ::1 at 2023-03-31 21:54:04 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/register"):
+  
+Started POST "/register" for ::1 at 2023-03-31 21:56:27 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user123", "email"=>"user123@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user123", "email"=>"user123@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f20f8accba8>, params: {"username"=>"user123", "email"=>"user123@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user123", "email"=>"user123@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user123"], ["email", "user123@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 18:56:28.264966"], ["updated_at", "2023-03-31 18:56:28.264966"]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 252ms (Views: 1.8ms | ActiveRecord: 6.1ms | Allocations: 39569)
+
+
+Started POST "/login" for ::1 at 2023-03-31 22:04:05 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+Started POST "/users/login" for ::1 at 2023-03-31 22:04:37 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user123", "email"=>"user123@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user123", "email"=>"user123@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f20ec009a88>, params: {"username"=>"user123", "email"=>"user123@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123", "email"=>"user123@gmail.com"}} }[0m
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f20ec009a88>, params: {"username"=>"user123", "email"=>"user123@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123", "email"=>"user123@gmail.com"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'user123' OR email = 'user123@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f20ec009a88>, params: {"username"=>"user123", "email"=>"user123@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123", "email"=>"user123@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 221ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 2737)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 22:06:59 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user123", "password"=>"[FILTERED]", "user"=>{"username"=>"user123"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f21048fe680>, params: {"username"=>"user123", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123"}} }[0m
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f21048fe680>, params: {"username"=>"user123", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'user123' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f21048fe680>, params: {"username"=>"user123", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 214ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1141)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 22:08:25 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user123", "password"=>"[FILTERED]", "user"=>{"username"=>"user123"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f20f0015e38>, params: {"username"=>"user123", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123"}} }[0m
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f20f0015e38>, params: {"username"=>"user123", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'user123' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f20f0015e38>, params: {"username"=>"user123", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user123"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 217ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1141)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:09:35 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"veek", "email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"veek", "email"=>"vickeryace@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f20f88f11a8>, params: {"username"=>"veek", "email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"veek", "email"=>"vickeryace@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (250.18ms)
+Completed 422 Unprocessable Entity in 251ms (Views: 250.5ms | ActiveRecord: 0.0ms | Allocations: 350377)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:12:36 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"veek", "email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"veek", "email"=>"vickeryace@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (217.87ms)
+Completed 422 Unprocessable Entity in 241ms (Views: 219.1ms | ActiveRecord: 0.6ms | Allocations: 385837)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:13:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"veek", "email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"veek", "email"=>"vickeryace@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (236.91ms)
+Completed 422 Unprocessable Entity in 256ms (Views: 238.2ms | ActiveRecord: 0.6ms | Allocations: 385836)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users/login" for ::1 at 2023-03-31 22:16:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"bennie", "email"=>"dylan_leannon@marquardt.info", "password"=>"[FILTERED]", "user"=>{"username"=>"bennie", "email"=>"dylan_leannon@marquardt.info"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'bennie' OR email = 'dylan_leannon@marquardt.info') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 25ms (Views: 1.1ms | ActiveRecord: 0.8ms | Allocations: 36712)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "your_username"], ["email", "your_email@example.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-31 19:20:30.584931"], ["updated_at", "2023-03-31 19:20:30.584931"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/login" for ::1 at 2023-03-31 22:22:50 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"your_username", "email"=>"your_email@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"your_username", "email"=>"your_email@example.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'your_username' OR email = 'your_email@example.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 228ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1032)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 22:23:22 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"your_username", "email"=>"your_email@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"your_username", "email"=>"your_email@example.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'your_username' OR email = 'your_email@example.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 237ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 917)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 22:24:22 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"your_username", "email"=>"your_email@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"your_username", "email"=>"your_email@example.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'your_username' OR email = 'your_email@example.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 256ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 36706)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 22:25:51 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"your_username", "email"=>"your_email@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"your_username", "email"=>"your_email@example.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'your_username' OR email = 'your_email@example.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 238ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 921)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users/login" for ::1 at 2023-03-31 22:27:07 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"your_username", "email"=>"your_email@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"your_username", "email"=>"your_email@example.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'your_username' OR email = 'your_email@example.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 254ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 921)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 22:27:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"your_username", "email"=>"your_email@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"your_username", "email"=>"your_email@example.com"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'your_username' OR email = 'your_email@example.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 270ms (Views: 1.5ms | ActiveRecord: 2.1ms | Allocations: 36706)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 22:28:51 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"your_username", "email"=>"your_email@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"your_username", "email"=>"your_email@example.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'your_username' OR email = 'your_email@example.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 246ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 2538)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 22:29:45 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"your_username", "email"=>"your_email@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"your_username", "email"=>"your_email@example.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'your_username' OR email = 'your_email@example.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 237ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 917)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:31:27 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"phase-4", "email"=>"vickeryace@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"phase-4", "email"=>"vickeryace@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (242.72ms)
+Completed 422 Unprocessable Entity in 244ms (Views: 243.1ms | ActiveRecord: 0.0ms | Allocations: 350247)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vickeryace@gmail.com"], ["LIMIT", 1]]
+Started POST "/register" for ::1 at 2023-03-31 22:34:31 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"phase-4", "email"=>"vickeryace99@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.74ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 757)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:35:09 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password_digest. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f20c4663208>, params: {"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password_digest"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password_digest"=>"[FILTERED]"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.66ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 844)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:35:30 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"phase-4", "email"=>"vickeryace99@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.46ms)
+Completed 422 Unprocessable Entity in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 747)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:36:01 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"phase-4", "email"=>"vickeryace99@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.6ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 1.2ms | ActiveRecord: 1.6ms | Allocations: 2299)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:36:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"phase-4", "email"=>"vickeryace99@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (250.87ms)
+Completed 422 Unprocessable Entity in 276ms (Views: 252.1ms | ActiveRecord: 0.7ms | Allocations: 385839)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:36:59 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"phase-4", "email"=>"vickeryace99@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"phase-4", "email"=>"vickeryace99@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.66ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 757)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:38:58 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"phase-5", "email"=>"vickeryace001@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"phase-5", "email"=>"vickeryace001@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.46ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 757)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:40:29 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 757)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:43:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fd6f0d0a218>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (257.21ms)
+Completed 422 Unprocessable Entity in 279ms (Views: 258.2ms | ActiveRecord: 0.7ms | Allocations: 385925)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:46:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 19ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 23658)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:56:38 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f7120cf7220>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 401 Unauthorized in 255ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 37809)
+
+
+Started POST "/register" for ::1 at 2023-03-31 22:59:17 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f4a60b357e8>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 268ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 37788)
+
+
+Started POST "/register" for ::1 at 2023-03-31 23:01:22 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fd250afb908>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 265ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 37869)
+
+
+Started POST "/register" for ::1 at 2023-03-31 23:03:08 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f95f0d838e8>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 201 Created in 259ms (Views: 1.2ms | ActiveRecord: 0.7ms | Allocations: 36224)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 23:05:17 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f95ec0093b0>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f95ec0093b0>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'user1234' OR email = 'user1234@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1308)
+
+
+Started POST "/users/login" for ::1 at 2023-03-31 23:06:04 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f95d806a070>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f95d806a070>, params: {"username"=>"user1234", "email"=>"user1234@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user1234", "email"=>"user1234@gmail.com"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'user1234' OR email = 'user1234@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 5ms (Views: 1.2ms | ActiveRecord: 1.3ms | Allocations: 1443)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "dolorem"], ["description", "Dolorem cum nemo perferendis."], ["created_at", "2023-04-01 07:55:09.594633"], ["updated_at", "2023-04-01 07:55:09.594633"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "nesciunt"], ["description", "Et nihil voluptates vel."], ["created_at", "2023-04-01 07:55:09.601545"], ["updated_at", "2023-04-01 07:55:09.601545"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "aperiam"], ["description", "Corrupti nostrum molestiae aut."], ["created_at", "2023-04-01 07:55:09.606775"], ["updated_at", "2023-04-01 07:55:09.606775"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "aut"], ["description", "Temporibus aspernatur similique sequi."], ["created_at", "2023-04-01 07:55:09.611537"], ["updated_at", "2023-04-01 07:55:09.611537"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "pariatur"], ["description", "Maxime sunt ratione molestiae."], ["created_at", "2023-04-01 07:55:09.616331"], ["updated_at", "2023-04-01 07:55:09.616331"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "latesha"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sammie.white@lebsack.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "latesha"], ["email", "sammie.white@lebsack.net"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:55:09.632778"], ["updated_at", "2023-04-01 07:55:09.632778"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "freddy.daugherty"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "boyd@boyle.org"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "similique"], ["description", "Vel quod voluptas ut."], ["created_at", "2023-04-01 07:55:56.946852"], ["updated_at", "2023-04-01 07:55:56.946852"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "tempore"], ["description", "Ipsam quo reprehenderit qui."], ["created_at", "2023-04-01 07:55:56.955040"], ["updated_at", "2023-04-01 07:55:56.955040"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "quis"], ["description", "Ipsam occaecati voluptatem veniam."], ["created_at", "2023-04-01 07:55:56.960019"], ["updated_at", "2023-04-01 07:55:56.960019"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "consequuntur"], ["description", "Eaque perferendis non voluptatibus."], ["created_at", "2023-04-01 07:55:56.967319"], ["updated_at", "2023-04-01 07:55:56.967319"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "quas"], ["description", "Non non perspiciatis impedit."], ["created_at", "2023-04-01 07:55:56.975760"], ["updated_at", "2023-04-01 07:55:56.975760"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "clint_hauck"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "carissa@cummings-little.org"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "reprehenderit"], ["description", "Molestiae laboriosam est quis."], ["created_at", "2023-04-01 07:56:14.910357"], ["updated_at", "2023-04-01 07:56:14.910357"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "cupiditate"], ["description", "Sapiente et praesentium nobis."], ["created_at", "2023-04-01 07:56:14.920169"], ["updated_at", "2023-04-01 07:56:14.920169"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "omnis"], ["description", "Nemo quia quidem vero."], ["created_at", "2023-04-01 07:56:14.927179"], ["updated_at", "2023-04-01 07:56:14.927179"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "voluptas"], ["description", "Iusto mollitia est eveniet."], ["created_at", "2023-04-01 07:56:14.937331"], ["updated_at", "2023-04-01 07:56:14.937331"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "numquam"], ["description", "Cumque pariatur sed recusandae."], ["created_at", "2023-04-01 07:56:14.944177"], ["updated_at", "2023-04-01 07:56:14.944177"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "usha"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "consectetur"], ["description", "Molestias quia rerum dolorem."], ["created_at", "2023-04-01 07:56:34.108866"], ["updated_at", "2023-04-01 07:56:34.108866"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "et"], ["description", "Reiciendis velit ea fugit."], ["created_at", "2023-04-01 07:56:34.117287"], ["updated_at", "2023-04-01 07:56:34.117287"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "facere"], ["description", "Voluptatem sequi illum sit."], ["created_at", "2023-04-01 07:56:34.122175"], ["updated_at", "2023-04-01 07:56:34.122175"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "velit"], ["description", "Beatae expedita quam et."], ["created_at", "2023-04-01 07:56:34.126688"], ["updated_at", "2023-04-01 07:56:34.126688"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "autem"], ["description", "Nihil cumque sit nesciunt."], ["created_at", "2023-04-01 07:56:34.131374"], ["updated_at", "2023-04-01 07:56:34.131374"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "sol_will"], ["email", "isabell@stehr-franecki.info"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.156714"], ["updated_at", "2023-04-01 07:56:34.156714"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "zane"], ["email", "johnson_boyer@kassulke-gerlach.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.164085"], ["updated_at", "2023-04-01 07:56:34.164085"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "tyler"], ["email", "zita_schinner@cummings.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.169843"], ["updated_at", "2023-04-01 07:56:34.169843"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "basilia.fahey"], ["email", "shemika_breitenberg@flatley-lowe.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.178428"], ["updated_at", "2023-04-01 07:56:34.178428"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "clement"], ["email", "emiko@borer.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.187581"], ["updated_at", "2023-04-01 07:56:34.187581"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "ryan"], ["email", "olen_swift@hauck-windler.io"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.194652"], ["updated_at", "2023-04-01 07:56:34.194652"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "son.gleason"], ["email", "burton@veum-armstrong.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.201334"], ["updated_at", "2023-04-01 07:56:34.201334"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "gilberto.braun"], ["email", "sergio@koss-pouros.io"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.207196"], ["updated_at", "2023-04-01 07:56:34.207196"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rona_wiegand"], ["email", "lindsay.kozey@kuphal-trantow.net"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.212638"], ["updated_at", "2023-04-01 07:56:34.212638"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "hiram_spinka"], ["email", "arica.gibson@gulgowski.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 07:56:34.217879"], ["updated_at", "2023-04-01 07:56:34.217879"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Non quasi quisquam veniam."], ["instructions", "Tenetur consectetur alias. Ut commodi non. Sint qui mollitia.\n\nQui accusamus non. Quo praesentium suscipit. Numquam eaque reiciendis.\n\nFacere provident dolores. Earum quia assumenda. Non qui mollitia."], ["ingredients", "consectetur, nihil, velit, non, soluta, repellendus, et, vero, atque, dolor"], ["prep_time", 94], ["user_id", 12], ["category_id", 16], ["created_at", "2023-04-01 07:56:34.239565"], ["updated_at", "2023-04-01 07:56:34.239565"], ["description", nil]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Blanditiis aliquam ut ad."], ["instructions", "Nam pariatur nisi. Sit est itaque. Ipsum voluptatem voluptatum.\n\nQuasi eum officiis. Quidem voluptatem earum. Ut exercitationem voluptatem.\n\nTenetur nulla aliquam. Est eligendi rerum. Dolores asperiores architecto."], ["ingredients", "esse, repellat, tenetur, possimus, veniam, est, fugiat, quo, libero, qui"], ["prep_time", 32], ["user_id", 24], ["category_id", 11], ["created_at", "2023-04-01 07:56:34.247085"], ["updated_at", "2023-04-01 07:56:34.247085"], ["description", nil]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Soluta occaecati atque placeat."], ["instructions", "Et illum architecto. Sequi quasi recusandae. Perferendis atque quam.\n\nEst sapiente voluptas. Id omnis voluptatem. Porro reiciendis et.\n\nVoluptatem rerum vel. Rerum eos nulla. Dolores eius ipsa."], ["ingredients", "tenetur, deserunt, rerum, sunt, nam, distinctio, nulla, quia, fuga, quaerat"], ["prep_time", 74], ["user_id", 40], ["category_id", 16], ["created_at", "2023-04-01 07:56:34.254564"], ["updated_at", "2023-04-01 07:56:34.254564"], ["description", nil]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Quaerat magni placeat inventore."], ["instructions", "Occaecati aliquid laborum. Quaerat nihil est. Odio eveniet sed.\n\nEst est neque. Harum vel atque. Et esse quidem.\n\nDolore et est. Eum molestiae quia. Sunt ratione possimus."], ["ingredients", "aperiam, vitae, quis, et, atque, rem, nostrum, dolorem, illum, velit"], ["prep_time", 86], ["user_id", 9], ["category_id", 29], ["created_at", "2023-04-01 07:56:34.261873"], ["updated_at", "2023-04-01 07:56:34.261873"], ["description", nil]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Nesciunt ut fugiat excepturi."], ["instructions", "Dolor et est. Qui exercitationem quia. Numquam voluptatum ea.\n\nDolores quod qui. Tempore autem sed. Ab assumenda illo.\n\nQuis et velit. Minus id quia. Eaque in sapiente."], ["ingredients", "distinctio, quisquam, quasi, pariatur, et, et, doloribus, optio, ut, non"], ["prep_time", 41], ["user_id", 2], ["category_id", 38], ["created_at", "2023-04-01 07:56:34.269403"], ["updated_at", "2023-04-01 07:56:34.269403"], ["description", nil]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sunt delectus ea et."], ["instructions", "Voluptas magnam enim. Consequatur non deserunt. Vitae et mollitia.\n\nIusto ducimus asperiores. Est incidunt nisi. Beatae iure veritatis.\n\nNobis ipsum alias. Qui quas tempore. Aut sint et."], ["ingredients", "veritatis, et, ea, neque, excepturi, ut, ea, quia, enim, mollitia"], ["prep_time", 34], ["user_id", 16], ["category_id", 20], ["created_at", "2023-04-01 07:56:34.276096"], ["updated_at", "2023-04-01 07:56:34.276096"], ["description", nil]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Vel et nobis quia."], ["instructions", "Ea ut pariatur. Doloremque nemo libero. Labore ut deleniti.\n\nSed odio rerum. Est voluptates qui. Blanditiis dignissimos odit.\n\nHarum illum iusto. Dolores nobis consequatur. Id possimus sit."], ["ingredients", "in, dolor, atque, odio, quod, pariatur, ut, exercitationem, explicabo, in"], ["prep_time", 106], ["user_id", 36], ["category_id", 30], ["created_at", "2023-04-01 07:56:34.282784"], ["updated_at", "2023-04-01 07:56:34.282784"], ["description", nil]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Nulla vel quia qui."], ["instructions", "Veritatis quia qui. Quo est officiis. Temporibus omnis cupiditate.\n\nQui nostrum ab. Aut velit nostrum. Cum nisi assumenda.\n\nTotam perferendis eum. Non voluptatem aut. Vitae aut qui."], ["ingredients", "ab, blanditiis, aut, deleniti, voluptas, in, voluptatem, quod, necessitatibus, nihil"], ["prep_time", 84], ["user_id", 30], ["category_id", 6], ["created_at", "2023-04-01 07:56:34.289347"], ["updated_at", "2023-04-01 07:56:34.289347"], ["description", nil]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Tenetur quia repudiandae laboriosam."], ["instructions", "Omnis ut quia. Est qui enim. Aut iste nemo.\n\nDelectus quasi quam. Omnis enim suscipit. Quia nisi in.\n\nOfficia nesciunt iure. Vel molestias aspernatur. Odio voluptatem debitis."], ["ingredients", "perspiciatis, inventore, corrupti, non, rem, soluta, excepturi, ut, iusto, ut"], ["prep_time", 106], ["user_id", 24], ["category_id", 39], ["created_at", "2023-04-01 07:56:34.303706"], ["updated_at", "2023-04-01 07:56:34.303706"], ["description", nil]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Numquam sed quia temporibus."], ["instructions", "Provident voluptatum eligendi. Voluptatem non nihil. Dicta et quidem.\n\nIpsa et tenetur. Qui nemo et. Possimus error suscipit.\n\nNisi et nostrum. In reprehenderit eum. Non labore quia."], ["ingredients", "autem, consequatur, architecto, esse, molestiae, qui, ratione, et, sit, sed"], ["prep_time", 23], ["user_id", 19], ["category_id", 15], ["created_at", "2023-04-01 07:56:34.314784"], ["updated_at", "2023-04-01 07:56:34.314784"], ["description", nil]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["recipe_id", 20], ["rating", 3], ["created_at", "2023-04-01 07:56:34.333697"], ["updated_at", "2023-04-01 07:56:34.333697"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 13], ["recipe_id", 6], ["rating", 1], ["created_at", "2023-04-01 07:56:34.340062"], ["updated_at", "2023-04-01 07:56:34.340062"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 42], ["recipe_id", 19], ["rating", 2], ["created_at", "2023-04-01 07:56:34.345859"], ["updated_at", "2023-04-01 07:56:34.345859"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 38], ["recipe_id", 4], ["rating", 4], ["created_at", "2023-04-01 07:56:34.357130"], ["updated_at", "2023-04-01 07:56:34.357130"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["recipe_id", 11], ["rating", 3], ["created_at", "2023-04-01 07:56:34.366893"], ["updated_at", "2023-04-01 07:56:34.366893"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 32], ["recipe_id", 11], ["rating", 3], ["created_at", "2023-04-01 07:56:34.374694"], ["updated_at", "2023-04-01 07:56:34.374694"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 34], ["recipe_id", 14], ["rating", 2], ["created_at", "2023-04-01 07:56:34.381327"], ["updated_at", "2023-04-01 07:56:34.381327"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 16], ["recipe_id", 12], ["rating", 1], ["created_at", "2023-04-01 07:56:34.387458"], ["updated_at", "2023-04-01 07:56:34.387458"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 28], ["recipe_id", 16], ["rating", 2], ["created_at", "2023-04-01 07:56:34.398330"], ["updated_at", "2023-04-01 07:56:34.398330"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["recipe_id", 8], ["rating", 2], ["created_at", "2023-04-01 07:56:34.407763"], ["updated_at", "2023-04-01 07:56:34.407763"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/register" for ::1 at 2023-04-01 10:57:54 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/register"):
+  
+Started POST "/users/register" for ::1 at 2023-04-01 10:58:31 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/register"):
+  
+Started POST "/register" for ::1 at 2023-04-01 11:00:28 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/register"):
+  
+Started POST "/users" for ::1 at 2023-04-01 11:01:00 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 607)
+
+
+Started POST "/users" for ::1 at 2023-04-01 11:05:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f3d2c5f6d40>, params: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 247ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 38073)
+
+
+Started POST "/users" for ::1 at 2023-04-01 11:15:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2158a47bf0>, params: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `register'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user1235"], ["email", "user12345@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 08:15:40.477811"], ["updated_at", "2023-04-01 08:15:40.477811"]]
+  ↳ app/controllers/users_controller.rb:19:in `register'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 264ms (Views: 1.5ms | ActiveRecord: 6.2ms | Allocations: 39726)
+
+
+Started POST "/users" for ::1 at 2023-04-01 11:17:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fda64a84c88>, params: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `register'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user1235"], ["email", "user12345@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 08:17:06.584607"], ["updated_at", "2023-04-01 08:17:06.584607"]]
+  ↳ app/controllers/users_controller.rb:19:in `register'
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 401 Unauthorized in 457ms (Views: 1.5ms | ActiveRecord: 6.6ms | Allocations: 39769)
+
+
+Started POST "/users" for ::1 at 2023-04-01 11:17:33 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[31mUnpermitted parameters: :password, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f13dcafd7b8>, params: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `register'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user1235"], ["email", "user12345@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 08:17:33.495952"], ["updated_at", "2023-04-01 08:17:33.495952"]]
+  ↳ app/controllers/users_controller.rb:19:in `register'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:19:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 251ms (Views: 1.2ms | ActiveRecord: 6.6ms | Allocations: 39733)
+
+
+Started POST "/users" for ::1 at 2023-04-01 11:18:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 238ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 35974)
+
+
+Started POST "/users" for ::1 at 2023-04-01 11:19:42 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 246ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 35974)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:02:43 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 248ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 35954)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:03:42 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 373)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:05:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 243ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 35954)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:10:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 236ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 35954)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:11:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 15ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 22198)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:11:50 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 230ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 15774)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "sunt"], ["description", "Atque laboriosam inventore aut."], ["created_at", "2023-04-01 09:13:03.018354"], ["updated_at", "2023-04-01 09:13:03.018354"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "nesciunt"], ["description", "Perspiciatis esse consequatur dignissimos."], ["created_at", "2023-04-01 09:13:03.028318"], ["updated_at", "2023-04-01 09:13:03.028318"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "dignissimos"], ["description", "Eum soluta sint inventore."], ["created_at", "2023-04-01 09:13:03.039104"], ["updated_at", "2023-04-01 09:13:03.039104"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "fugit"], ["description", "Quia et quis veniam."], ["created_at", "2023-04-01 09:13:03.045156"], ["updated_at", "2023-04-01 09:13:03.045156"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "et"], ["description", "Odit provident fugit explicabo."], ["created_at", "2023-04-01 09:13:03.050794"], ["updated_at", "2023-04-01 09:13:03.050794"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "floretta"], ["email", "quincy.mcglynn@barton-robel.net"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.065074"], ["updated_at", "2023-04-01 09:13:03.065074"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "gary"], ["email", "lenard@thompson-streich.co"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.070444"], ["updated_at", "2023-04-01 09:13:03.070444"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "kelley"], ["email", "bernardo_daugherty@hansen.co"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.075344"], ["updated_at", "2023-04-01 09:13:03.075344"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "val.bashirian"], ["email", "gavin.ward@frami-cormier.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.080153"], ["updated_at", "2023-04-01 09:13:03.080153"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "emilio"], ["email", "vada_stracke@weissnat.co"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.085641"], ["updated_at", "2023-04-01 09:13:03.085641"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "alverta"], ["email", "johana@murphy-renner.org"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.090945"], ["updated_at", "2023-04-01 09:13:03.090945"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "delmer.treutel"], ["email", "derick.goyette@keeling.io"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.095788"], ["updated_at", "2023-04-01 09:13:03.095788"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "freddy.lowe"], ["email", "janey_becker@kilback-kessler.name"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.100910"], ["updated_at", "2023-04-01 09:13:03.100910"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "roxane"], ["email", "prince@stehr-considine.biz"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.106991"], ["updated_at", "2023-04-01 09:13:03.106991"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "conchita"], ["email", "windy@hane.info"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:13:03.112167"], ["updated_at", "2023-04-01 09:13:03.112167"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Sapiente debitis veniam hic."], ["instructions", "Ut dolore corrupti. Aperiam iure vel. Quia quasi voluptas.\n\nVeniam est vel. Repellendus deleniti consequuntur. Dolor aut rem.\n\nFugit quia doloribus. Incidunt veniam enim. Aspernatur quia voluptatem."], ["ingredients", "occaecati, repellat, facere, omnis, quibusdam, veritatis, alias, ut, id, qui"], ["prep_time", 56], ["user_id", 34], ["category_id", 6], ["created_at", "2023-04-01 09:13:03.170905"], ["updated_at", "2023-04-01 09:13:03.170905"], ["description", nil]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Ut et quae qui."], ["instructions", "Modi similique ut. Corporis id qui. Et quia corrupti.\n\nVel inventore veritatis. Aut tempora voluptatem. Ut voluptatem quia.\n\nNihil beatae dolor. Ex expedita ab. Aspernatur sapiente sunt."], ["ingredients", "magni, quia, quae, deserunt, modi, odit, repellendus, laboriosam, sit, fugiat"], ["prep_time", 30], ["user_id", 34], ["category_id", 4], ["created_at", "2023-04-01 09:13:03.182836"], ["updated_at", "2023-04-01 09:13:03.182836"], ["description", nil]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.6ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Quas vel quos assumenda."], ["instructions", "Voluptate sint laudantium. Reprehenderit quasi assumenda. Nemo blanditiis beatae.\n\nIn sint quidem. Qui consequatur tempore. Enim quisquam adipisci.\n\nVel et officia. Vel molestiae eius. Culpa voluptas quia."], ["ingredients", "autem, sunt, placeat, possimus, et, earum, voluptatibus, hic, soluta, ab"], ["prep_time", 57], ["user_id", 4], ["category_id", 33], ["created_at", "2023-04-01 09:13:03.200024"], ["updated_at", "2023-04-01 09:13:03.200024"], ["description", nil]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Omnis laboriosam aliquam a."], ["instructions", "Nam voluptas iusto. Doloribus aliquam deserunt. Quia id eos.\n\nDolorum incidunt sunt. Voluptas at impedit. Quibusdam quae ipsam.\n\nEst corporis et. Velit provident soluta. Iusto esse doloribus."], ["ingredients", "consequuntur, blanditiis, molestiae, sint, nihil, ut, dolor, laboriosam, pariatur, inventore"], ["prep_time", 75], ["user_id", 24], ["category_id", 7], ["created_at", "2023-04-01 09:13:03.220466"], ["updated_at", "2023-04-01 09:13:03.220466"], ["description", nil]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Rem ipsa possimus architecto."], ["instructions", "Odit quasi similique. Ex accusantium placeat. Cupiditate laboriosam tenetur.\n\nItaque placeat in. Molestiae quia recusandae. Adipisci qui a.\n\nAut quos ducimus. Dolore aut vel. Similique commodi odio."], ["ingredients", "repudiandae, rem, magnam, natus, adipisci, neque, et, deserunt, laboriosam, occaecati"], ["prep_time", 59], ["user_id", 23], ["category_id", 11], ["created_at", "2023-04-01 09:13:03.232427"], ["updated_at", "2023-04-01 09:13:03.232427"], ["description", nil]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Enim amet iure aut."], ["instructions", "Qui voluptatem reiciendis. Officia ut eum. Placeat iure aut.\n\nSint quaerat et. Exercitationem tempora voluptates. Natus aut quo.\n\nConsectetur accusantium ut. Consectetur explicabo modi. Illum est sint."], ["ingredients", "veniam, nesciunt, in, voluptatem, ut, facere, ipsa, nemo, quod, alias"], ["prep_time", 50], ["user_id", 53], ["category_id", 39], ["created_at", "2023-04-01 09:13:03.241673"], ["updated_at", "2023-04-01 09:13:03.241673"], ["description", nil]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Saepe est velit quos."], ["instructions", "Enim et ea. Distinctio repellendus ut. Impedit dolores vel.\n\nNostrum facere dolorum. Fugiat quo laudantium. Aut quod praesentium.\n\nPossimus nemo quae. Animi iusto illo. Facere placeat dolorum."], ["ingredients", "ut, in, veritatis, non, molestias, officia, aut, quaerat, fuga, nisi"], ["prep_time", 97], ["user_id", 19], ["category_id", 48], ["created_at", "2023-04-01 09:13:03.249448"], ["updated_at", "2023-04-01 09:13:03.249448"], ["description", nil]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Illo numquam quae et."], ["instructions", "Incidunt blanditiis magni. Deserunt quos est. Non assumenda ipsam.\n\nEx aut consequatur. Consequatur expedita dignissimos. Quia est porro.\n\nAut optio placeat. Nihil nihil eius. Voluptas deserunt libero."], ["ingredients", "velit, tempora, ut, voluptatem, temporibus, animi, qui, voluptatem, qui, ut"], ["prep_time", 69], ["user_id", 3], ["category_id", 49], ["created_at", "2023-04-01 09:13:03.257151"], ["updated_at", "2023-04-01 09:13:03.257151"], ["description", nil]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Veritatis qui magni odio."], ["instructions", "Debitis ullam magni. Ab cumque eius. Voluptatem vel aspernatur.\n\nQuasi dolor veritatis. Sapiente porro ad. Temporibus aut in.\n\nMinima dolorem est. Autem enim illo. Et autem corrupti."], ["ingredients", "cumque, sit, eos, et, et, modi, sit, aut, eum, est"], ["prep_time", 23], ["user_id", 10], ["category_id", 28], ["created_at", "2023-04-01 09:13:03.271148"], ["updated_at", "2023-04-01 09:13:03.271148"], ["description", nil]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecipe Create (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "instructions", "ingredients", "prep_time", "user_id", "category_id", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Nostrum qui vitae libero."], ["instructions", "Corporis error sint. Sint et quia. Debitis porro accusamus.\n\nNumquam sapiente accusantium. Exercitationem impedit quaerat. Nulla rerum eius.\n\nMagnam asperiores nobis. Explicabo tempore cupiditate. Possimus quo qui."], ["ingredients", "aut, soluta, molestiae, eaque, porro, voluptas, qui, sed, necessitatibus, explicabo"], ["prep_time", 43], ["user_id", 32], ["category_id", 14], ["created_at", "2023-04-01 09:13:03.286945"], ["updated_at", "2023-04-01 09:13:03.286945"], ["description", nil]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 52], ["recipe_id", 16], ["rating", 3], ["created_at", "2023-04-01 09:13:03.307978"], ["updated_at", "2023-04-01 09:13:03.307978"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 14], ["recipe_id", 10], ["rating", 3], ["created_at", "2023-04-01 09:13:03.314669"], ["updated_at", "2023-04-01 09:13:03.314669"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 24], ["recipe_id", 16], ["rating", 2], ["created_at", "2023-04-01 09:13:03.320493"], ["updated_at", "2023-04-01 09:13:03.320493"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 23], ["recipe_id", 7], ["rating", 1], ["created_at", "2023-04-01 09:13:03.326302"], ["updated_at", "2023-04-01 09:13:03.326302"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 30], ["recipe_id", 20], ["rating", 3], ["created_at", "2023-04-01 09:13:03.332084"], ["updated_at", "2023-04-01 09:13:03.332084"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 28], ["recipe_id", 29], ["rating", 2], ["created_at", "2023-04-01 09:13:03.338000"], ["updated_at", "2023-04-01 09:13:03.338000"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 9], ["recipe_id", 25], ["rating", 5], ["created_at", "2023-04-01 09:13:03.343719"], ["updated_at", "2023-04-01 09:13:03.343719"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 25], ["recipe_id", 20], ["rating", 3], ["created_at", "2023-04-01 09:13:03.349404"], ["updated_at", "2023-04-01 09:13:03.349404"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 47], ["recipe_id", 23], ["rating", 3], ["created_at", "2023-04-01 09:13:03.355034"], ["updated_at", "2023-04-01 09:13:03.355034"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Create (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "recipe_id", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["recipe_id", 29], ["rating", 5], ["created_at", "2023-04-01 09:13:03.360708"], ["updated_at", "2023-04-01 09:13:03.360708"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for ::1 at 2023-04-01 12:13:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user1235", "email"=>"user12345@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user1235", "email"=>"user12345@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 254ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 35954)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:17:29 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 235ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 393)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:20:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007feb5caa8d78>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29:in `register'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user125"], ["email", "user125@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:20:19.883666"], ["updated_at", "2023-04-01 09:20:19.883666"]]
+  ↳ app/controllers/users_controller.rb:29:in `register'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:29:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 401 Unauthorized in 274ms (Views: 1.9ms | ActiveRecord: 6.6ms | Allocations: 39770)
+
+
+Started POST "/users" for ::1 at 2023-04-01 12:22:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2ec4aa67a8>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:34:in `register'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user125"], ["email", "user125@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:22:31.034697"], ["updated_at", "2023-04-01 09:22:31.034697"]]
+  ↳ app/controllers/users_controller.rb:34:in `register'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:34:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 201 Created in 278ms (Views: 1.4ms | ActiveRecord: 6.4ms | Allocations: 38054)
+
+
+Started POST "/users/login" for ::1 at 2023-04-01 12:23:43 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f2ed10e56a8>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f2ed10e56a8>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'user125' OR email = 'user125@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f2ed10e56a8>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 235ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1462)
+
+
+Started POST "/users/login" for ::1 at 2023-04-01 12:27:07 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f9008b20b98>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f9008b20b98>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'user125' OR email = 'user125@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f9008b20b98>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 401 Unauthorized in 264ms (Views: 2.1ms | ActiveRecord: 0.8ms | Allocations: 38846)
+
+
+Started POST "/users/login" for ::1 at 2023-04-01 12:31:18 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f96ccb00c38>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f96ccb00c38>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'user125' OR email = 'user125@gmail.com') ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:46:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f96ccb00c38>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 277ms (Views: 1.4ms | ActiveRecord: 0.8ms | Allocations: 39066)
+
+
+Started POST "/users/login" for ::1 at 2023-04-01 12:42:05 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fd594afd950>, params: {"username"=>"user125", "email"=>"user125@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"user125", "email"=>"user125@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:60:in `login'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user125"], ["email", "user125@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-01 09:42:05.557166"], ["updated_at", "2023-04-01 09:42:05.557166"]]
+  ↳ app/controllers/users_controller.rb:60:in `login'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:60:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.2ms)
+Completed 201 Created in 284ms (Views: 1.6ms | ActiveRecord: 6.6ms | Allocations: 38236)
+
+
